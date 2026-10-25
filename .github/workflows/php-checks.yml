@@ -1,0 +1,29 @@
+name: PHP & JavaScript Checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup PHP 8.2
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          extensions: mbstring, pdo_mysql
+
+      - name: Periksa sintaks semua file PHP
+        run: find . -name '*.php' -not -path './vendor/*' -print0 | xargs -0 -n1 php -l
+
+      - name: Jalankan smoke test PHP
+        run: php tests/smoke.php
+
+      - name: Periksa sintaks JavaScript
+        run: node --check assets/app.js

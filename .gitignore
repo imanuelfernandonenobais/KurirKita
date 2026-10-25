@@ -1,0 +1,26 @@
+# Konfigurasi komputer / database (jangan commit kredensial)
+/config.local.php
+.env
+.env.*
+!.env.example
+
+# Cache, file editor, sistem operasi
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log
+*.cache
+
+# Dependensi (belum digunakan dalam proyek ini)
+/vendor/
+/node_modules/
+
+# Data privat / backup
+/backups/
+/uploads/
+*.sql.gz
+*.bak
+
+# File percobaan lokal
+_preview.html

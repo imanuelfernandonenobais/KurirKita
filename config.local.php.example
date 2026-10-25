@@ -1,0 +1,12 @@
+<?php
+/**
+ * Contoh konfigurasi lokal.
+ * Salin menjadi config.local.php dan ubah sesuai database komputer Anda.
+ * JANGAN unggah config.local.php ke GitHub.
+ */
+
+define('DB_HOST', '127.0.0.1');
+define('DB_PORT', '3306');
+define('DB_NAME', 'kirimkita_db');
+define('DB_USER', 'root');
+define('DB_PASS', '');

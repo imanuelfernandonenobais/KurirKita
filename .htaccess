@@ -1,0 +1,8 @@
+Options -Indexes
+
+# Folder source code, skema, dokumentasi, dan test bukan endpoint publik.
+RedirectMatch 403 ^/(?:[^/]+/)?(?:src|database|docs|tests|\.github)(?:/|$)
+
+<FilesMatch "^(config(?:\.local)?\.php|config\.local\.php\.example|.*\.sql|.*\.md|.*\.bak|.*\.log|\.gitignore|\.gitattributes)$">
+    Require all denied
+</FilesMatch>
